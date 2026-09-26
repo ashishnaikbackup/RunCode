@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RunCode - a simple browser-based Python playground for learning and running Python code." />
+  <title>RunCode — Python Playground</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">▶</span><span>RunCode</span></div>
+    <div class="language">Python 3 <span class="dot"></span></div>
+    <div class="actions">
+      <button id="clearBtn" class="ghost">Clear</button>
+      <button id="runBtn" class="run">▶ Run</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="panel editor-panel">
+      <div class="panel-head"><span>Code</span><span id="status">Ready</span></div>
+      <textarea id="editor" spellcheck="false">print("Hello, World!")
+
+name = input("What is your name? ")
+print("Hello", name)</textarea>
+    </section>
+
+    <section class="bottom-grid">
+      <div class="panel">
+        <div class="panel-head"><span>Input</span><span class="hint">One line per input()</span></div>
+        <textarea id="stdin" spellcheck="false" placeholder="Ashish"></textarea>
+      </div>
+      <div class="panel output-panel">
+        <div class="panel-head"><span>Output</span><button id="copyBtn" class="mini">Copy</button></div>
+        <pre id="output">Press Run to execute your Python program.</pre>
+      </div>
+    </section>
+
+    <section class="info">
+      <strong>Python in your browser</strong>
+      <span>Powered by Pyodide (CPython compiled to WebAssembly). Your code runs locally in this tab.</span>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
